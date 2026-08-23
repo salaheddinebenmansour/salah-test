@@ -1,13 +1,11 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-h1
+  h1
   Hello Vite + Vue 3 + Inertia.js!
   <HelloWorld msg="hello my brother salah hows th mohamed hows the lif is going to be  " />
-  
 </template>
 
 <style scoped>
