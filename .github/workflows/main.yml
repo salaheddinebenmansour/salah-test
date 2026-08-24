@@ -32,24 +32,32 @@ jobs:
       - name: Login to Container Registry
         run: az acr login --name "$ACR_NAME"
 
+      # =========================
+      # Backend
+      # =========================
+
       - name: Build backend image
         run: |
           docker build \
             -f docker/php/Dockerfile.prod \
-            -t "$ACR_LOGIN_SERVER/greenenergy:latest" \
+            -t "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}" \
             .
 
       - name: Push backend image
         run: |
-          docker push "$ACR_LOGIN_SERVER/greenenergy:latest"
+          docker push "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}"
+
+      # =========================
+      # Frontend
+      # =========================
 
       - name: Build frontend image
         run: |
           docker build \
             -f docker/frontend/Dockerfile.prod \
-            -t "$ACR_LOGIN_SERVER/greenenergy:latest" \
+            -t "$ACR_LOGIN_SERVER/greenenergy-frontend:${{ github.sha }}" \
             .
 
       - name: Push frontend image
         run: |
-          docker push "$ACR_LOGIN_SERVER/greenenergy:latest"
+          docker push "$ACR_LOGIN_SERVER/greenenergy-frontend:${{ github.sha }}"
