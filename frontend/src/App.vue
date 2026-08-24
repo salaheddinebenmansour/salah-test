@@ -3,9 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  h1
-  Hello Vite + Vue 3 + Inertia.js!
-  <HelloWorld msg="hello my brother salah hows th mohamed hows the lif is going to be  " />
+ hello from azure
 </template>
 
 <style scoped>
