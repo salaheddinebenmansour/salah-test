@@ -47,11 +47,24 @@ jobs:
         run: |
           docker push "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}"
 
+      - name: Deploy backend to Azure Container App
+        run: |
+          az containerapp update \
+            --name greenenergy-backend \
+            --resource-group Green_Energy \
+            --image "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}"
+
+      - name: Run Laravel migrations
+        run: |
+          az containerapp exec \
+            --name greenenergy-backend \
+            --resource-group Green_Energy \
+            --command "php artisan migrate --force"
 
       # =========================
       # Frontend
       # =========================
-              
+
       - name: Build frontend image
         run: |
           docker build \
