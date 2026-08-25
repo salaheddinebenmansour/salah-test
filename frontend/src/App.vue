@@ -3,7 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
- hello from azure
+ rah klhadam albochir
 </template>
 
 <style scoped>
