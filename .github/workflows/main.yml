@@ -61,3 +61,10 @@ jobs:
       - name: Push frontend image
         run: |
           docker push "$ACR_LOGIN_SERVER/greenenergy-frontend:${{ github.sha }}"
+
+      - name: Deploy frontend to Azure Container App
+        run: |
+          az containerapp update \
+            --name greenenergy \
+            --resource-group Green_Energy \
+            --image "$ACR_LOGIN_SERVER/greenenergy-frontend:${{ github.sha }}"
