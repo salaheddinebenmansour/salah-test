@@ -51,11 +51,7 @@ jobs:
       # =========================
       # Frontend
       # =========================
-      - name: Debug Azure context
-        run: |
-          az account show
-          az containerapp list --resource-group Green_Energy --output table
-          
+              
       - name: Build frontend image
         run: |
           docker build \
