@@ -47,10 +47,15 @@ jobs:
         run: |
           docker push "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}"
 
+
       # =========================
       # Frontend
       # =========================
-
+      - name: Debug Azure context
+        run: |
+          az account show
+          az containerapp list --resource-group Green_Energy --output table
+          
       - name: Build frontend image
         run: |
           docker build \
