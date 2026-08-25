@@ -56,10 +56,14 @@ jobs:
 
       - name: Run Laravel migrations
         run: |
-          az containerapp exec \
-            --name greenenergy-backend \
+          az containerapp job update \
+            --name greenenergy-migrate \
             --resource-group Green_Energy \
-            --command "php artisan migrate --force"
+            --image "$ACR_LOGIN_SERVER/greenenergy-backend:${{ github.sha }}"
+
+          az containerapp job start \
+            --name greenenergy-migrate \
+            --resource-group Green_Energy
 
       # =========================
       # Frontend
