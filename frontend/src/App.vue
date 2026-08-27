@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
@@ -7,8 +6,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
  salahtestSSSS
 
-
- 
 </template>
 
 <style scoped>
