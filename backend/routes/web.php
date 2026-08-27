@@ -6,7 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/test', function () {
     return 'BACKEND TEST 123';
 });
