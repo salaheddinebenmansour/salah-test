@@ -2,10 +2,9 @@
 </script>
 
 <template>
- rah klhadam albochir
+  rah klhadam albochir
 
- salahtestSSSS
-
+  salahtestSSSS
 </template>
 
 <style scoped>
