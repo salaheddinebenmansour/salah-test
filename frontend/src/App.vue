@@ -4,6 +4,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
  rah klhadam albochir
+
+ salahtestSSSS
+
+
+ 
 </template>
 
 <style scoped>
